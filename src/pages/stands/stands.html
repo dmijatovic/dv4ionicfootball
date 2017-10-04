@@ -1,0 +1,43 @@
+<!--PAGE NAV-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{pageTitle}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<!--PAGE CONTENT -->
+<ion-content padding>
+  <ion-list>
+      <ion-item-sliding 
+        *ngFor="let item of standing"
+        (click)="clubInfo(item)">
+        <!--list item incl avatar -->
+        <ion-item>
+          <ion-avatar item-start>
+            <img [src]="item.crestURI">
+          </ion-avatar>
+          <h2>{{item.position}}. {{item.teamName}}</h2>
+          <p>
+            <span style="text-align:left;">wins: {{item.wins}}/{{item.playedGames}}</span>
+            <span style="text-align:right;">pts: {{item.points}}</span>
+          </p>
+        </ion-item>
+        <!--slide options-->
+        <ion-item-options side="left">
+          <button ion-button color="primary">
+            <ion-icon name="text"></ion-icon>
+            Text
+          </button>
+          <button ion-button color="secondary">
+            <ion-icon name="call"></ion-icon>
+            Call
+          </button>
+        </ion-item-options>
+        <ion-item-options side="right">
+          <button ion-button color="primary">
+            <ion-icon name="mail"></ion-icon>
+            Email
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+  </ion-list>
+</ion-content>

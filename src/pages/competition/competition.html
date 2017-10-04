@@ -1,0 +1,24 @@
+<!-- PAGE HEADER -->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Competitions</ion-title>
+  </ion-navbar>
+</ion-header>
+<!--PAGE BODY-->
+<ion-content padding>
+  <ion-list>
+    <button ion-item
+      *ngFor="let item of competitions"
+      (click)="itemSelected(item)">
+      {{item.caption}}
+
+      <ion-badge item-end>{{item.currentMatchday}} / {{item.numberOfMatchdays}}</ion-badge>
+    </button>     
+  </ion-list>
+
+  <ion-spinner 
+    [hidden]="!loader"
+    name="bubbles">
+  </ion-spinner>
+
+</ion-content>

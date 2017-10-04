@@ -1,0 +1,46 @@
+<!--PAGE NAV-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{pageTitle}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<!--PAGE CONTENT -->
+<ion-content padding>
+  <ion-card>
+    <img [src]="team.crestUrl"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{team.code}}
+      </ion-card-title>
+      <p>
+        Here we need to pull more info about the club from Wikipedia?
+      </p>
+    </ion-card-content>
+    <ion-row no-padding>
+        <ion-col>
+          <button ion-button clear small color="danger" 
+            (click)="showPlayers(team._links.players)"
+            icon-start>
+            <ion-icon name='star'></ion-icon>
+            Players
+          </button>
+        </ion-col>
+        <!--
+        <ion-col text-center>
+          <button ion-button clear small color="danger" icon-start>
+            <ion-icon name='musical-notes'></ion-icon>
+            Listen
+          </button>
+        </ion-col>
+        -->
+        <ion-col text-right>
+          <button ion-button clear small color="danger" 
+            (click)="showSchedule(team._links.fixes)"
+            icon-start>
+            <ion-icon name='share-alt'></ion-icon>
+            Schedule
+          </button>
+        </ion-col>
+      </ion-row>
+  </ion-card>
+</ion-content>
